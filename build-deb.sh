@@ -27,12 +27,11 @@ else
 fi
 rm -rf .[^.] .??* 
 # create source tarball from git repo
-#tar -zcvf ../"$Source_Str"_"$DEB_Upstream_Version_Str".orig.tar.gz --exclude=./debian --exclude=./.git .
-tar -zcvf $WORKSPACE/"$Source_Str"_"$DEB_Upstream_Version_Str".orig.tar.gz --exclude=./debian --exclude=./.git .
+tar -zcvf ../"$Source_Str"_"$DEB_Upstream_Version_Str".orig.tar.gz --exclude=./debian --exclude=./.git .
+#tar -zcvf $WORKSPACE/"$Source_Str"_"$DEB_Upstream_Version_Str".orig.tar.gz --exclude=./debian --exclude=./.git .
 
 # generate only the .dsc file
 dpkg-source -b .
-dpkg-source -b . -x $WORKSPACE
 
 #cd $WORKSPACE
 
